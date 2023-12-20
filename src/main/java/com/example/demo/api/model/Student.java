@@ -1,24 +1,27 @@
 package com.example.demo.api.model;
-public class Student {
-    private int id;
-    private String name;
-    private String birthday;
-    private String sex;
-    private String address;
-    private double math;
-    private double english;
-    private double literature;
 
-    public Student(int id, String name, String birthday, String sex, String address, double math, double english, double literature) {
-        this.id = id;
-        this.name = name;
-        this.birthday = birthday;
-        this.sex = sex;
-        this.address = address;
-        this.math = math;
-        this.english = english;
-        this.literature = literature;
-    }
+import jakarta.persistence.*;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+@Entity
+@Table(name = "quanlysinhvien")
+public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    @Column(name = "name", nullable = false)
+    private String name;
+    @Column(name = "birthday",nullable = false)
+    private String birthday;
+    @Column(name = "sex", nullable = true)
+    private String sex;
+    @Column(name = "address",nullable = true)
+    private String address;
+    @Column(name="math", nullable = false)
+    private double math;
+    @Column(name="english", nullable = false)
+    private double english;
+    @Column(name="literature", nullable = false)
+    private double literature;
 
     public int getId() {
         return id;
