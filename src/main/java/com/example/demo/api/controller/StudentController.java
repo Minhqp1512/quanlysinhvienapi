@@ -32,6 +32,10 @@ public class StudentController {
                         .orElseThrow(() -> new ResourceNotFoundException("khong co sinh vien nhu lay"+ studenrID));
                 return ResponseEntity.ok().body(student);
     }
+    @PostMapping("employees")
+    public Student createStudent(@Valid @RequestBody Student student) {
+        return studentRepository.save(student);
+    }
     @PutMapping("quanlysinhvien/{id}")
     public ResponseEntity<Student> updateStudent(@PathVariable(value = "id") Long studentId,
                                                  @Valid @RequestBody Student studentDetails)
