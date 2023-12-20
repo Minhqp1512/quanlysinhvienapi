@@ -10,17 +10,17 @@ public class Student {
     private int id;
     @Column(name = "name", nullable = false)
     private String name;
-    @Column(name = "birthday",nullable = false)
+//    @Column(name = "birthday",nullable = false)
     private String birthday;
-    @Column(name = "sex", nullable = true)
+//    @Column(name = "sex", nullable = true)
     private String sex;
-    @Column(name = "address",nullable = true)
+//    @Column(name = "address",nullable = true)
     private String address;
-    @Column(name="math", nullable = false)
+//    @Column(name="math", nullable = false)
     private double math;
-    @Column(name="english", nullable = false)
+//    @Column(name="english", nullable = false)
     private double english;
-    @Column(name="literature", nullable = false)
+//    @Column(name="literature", nullable = false)
     private double literature;
 
     public int getId() {
