@@ -32,7 +32,7 @@ public class StudentController {
                         .orElseThrow(() -> new ResourceNotFoundException("khong co sinh vien nhu lay"+ studenrID));
                 return ResponseEntity.ok().body(student);
     }
-    @PostMapping("employees")
+    @PostMapping("quanlysinhvien")
     public Student createStudent(@Valid @RequestBody Student student) {
         return studentRepository.save(student);
     }
