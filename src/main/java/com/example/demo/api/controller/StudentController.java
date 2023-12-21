@@ -4,6 +4,7 @@ import com.example.demo.api.model.Student;
 import com.example.demo.api.repository.StudentRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,12 +19,12 @@ public class StudentController {
 
     @Autowired
     private StudentRepository studentRepository;
+//them moi 1 dong
 
     @GetMapping("quanlysinhvien")
     public List<Student> getAllStudent(){
         return studentRepository.findAll();
     }
-
     @GetMapping("quanlysinhvien/{id}")
     public ResponseEntity<Student> getStudentById(@PathVariable(value ="id") Long studenrID )
     throws ResourceNotFoundException
